@@ -1,0 +1,34 @@
+name: Textile Buckets
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  bucket_push:
+    runs-on: ubuntu-latest
+    name: push textile bucket
+    steps:
+    - name: push action
+      id: bucket
+      uses: textileio/github-action-buckets@v23
+      with:
+        key: ${{ secrets.TEXTILE_ACCOUNT_KEY }}
+        secret: ${{ secrets.TEXTILE_ACCOUNT_SECRET }}
+        bucket: 'public'
+        thread: 'bafk4ne55chdcc2kxdufaxjxrh4uz4o23uvf666akxxxhjuk2ajh4auy'
+        path: '/dist'
+        pattern: '**/*'
+        remove: 'false'
+    # Use the output from the `hello` step
+    - run: echo "bucket key: ${{ steps.bucket.outputs.key }}"
+    - run: echo "ipfs: ${{ steps.bucket.outputs.ipfs }}"
+    - run: echo "ipfs link: ${{ steps.bucket.outputs.ipfsUrl }}"
+    - run: echo "ipns: ${{ steps.bucket.outputs.ipns }}"
+    - run: echo "ipns link: ${{ steps.bucket.outputs.ipnsUrl }}"
+    - run: echo "hub: ${{ steps.bucket.outputs.hub }}"
+    - run: echo "www: ${{ steps.bucket.outputs.www }}"
