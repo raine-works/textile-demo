@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     name: push textile bucket
     steps:
-    - name: install and build
-      run: |
-        npm install
-        npm run build
+    # - name: install and build
+    #   run: |
+    #     npm install
+    #     npm run build
     - name: push action
       id: bucket
       uses: textileio/github-action-buckets@v23
