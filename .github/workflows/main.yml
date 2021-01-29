@@ -21,8 +21,8 @@ jobs:
       id: bucket
       uses: textileio/github-action-buckets@v23
       with:
-        key: ${{ environment.secrets.TEXTILE_ACCOUNT_KEY }}
-        secret: ${{ environment.secrets.TEXTILE_ACCOUNT_SECRET }}
+        key: ${{ secrets.TEXTILE_ACCOUNT_KEY }}
+        secret: ${{ secrets.TEXTILE_ACCOUNT_SECRET }}
         bucket: 'public'
         thread: 'bafk4ne55chdcc2kxdufaxjxrh4uz4o23uvf666akxxxhjuk2ajh4auy'
         path: '/dist'
