@@ -23,7 +23,7 @@ jobs:
         with:
           key: ${{ secrets.TEXTILE_ACCOUNT_KEY }}
           secret: ${{ secrets.TEXTILE_ACCOUNT_SECRET }}
-          bucket: "public"
+          bucket: "bucket"
           thread: ${{ secrets.TEXTILE_ORG_BUCKET_THREAD }}
           path: "dist"
           pattern: "**/*"
