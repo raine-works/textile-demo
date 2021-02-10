@@ -25,6 +25,7 @@ jobs:
           secret: ${{ secrets.TEXTILE_ACCOUNT_SECRET }}
           bucket: "bucket"
           thread: ${{ secrets.TEXTILE_ORG_BUCKET_THREAD }}
+          echo:  "ls"
           path: "dist"
           pattern: "**/*"
       - run: echo "bucket - ${{ steps.bucket.outputs.key }}"
