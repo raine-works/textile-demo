@@ -17,6 +17,7 @@ jobs:
         run: |
           npm install
           npm run build
+          cd bucket
           ls
       - name: Textile Buckets
         id: bucket
@@ -26,7 +27,7 @@ jobs:
           secret: ${{ secrets.TEXTILE_ACCOUNT_SECRET }}
           bucket: "bucket"
           thread: ${{ secrets.TEXTILE_ORG_BUCKET_THREAD }}
-          path: "dist"
+          path: "bucket"
           pattern: "**/*"
       - run: echo "bucket - ${{ steps.bucket.outputs.key }}"
       - run: echo "ipfs - ${{ steps.bucket.outputs.ipfs }}"
