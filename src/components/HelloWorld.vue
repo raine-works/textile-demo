@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>Decentralize the web!</h1>
+    <p>The future is decentralized.</p>
   </div>
 </template>
 
