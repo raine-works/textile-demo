@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>Hello bitches!</h1>
+    <h1>Decentralize the web!</h1>
   </div>
 </template>
 
